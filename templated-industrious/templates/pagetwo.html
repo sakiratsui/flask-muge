@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css')}}" />
+</head>
+<body>
+<header id="header">
+    <a class="logo" href="home.html">Online Exam System</a>
+    <nav>
+        <a href="#menu">Menu</a>
+    </nav>
+</header>
+
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="home">Home</a></li>
+        <li><a href="exams">Exams</a></li>
+        <li><a href="leaderboard">Leaderboard</a></li>
+        <li><a href="logout">Logout</a> </li>
+    </ul>
+</nav>
+
+<!-- Heading -->
+<div id="heading" >
+    <h1>Add Questions</h1>
+</div>
+<section id="main" class="wrapper">
+    <div class="inner">
+            <header>
+                <h2>Questions</h2>
+            </header>
+            <div>
+                <label> Exam Name: {{examname}} </label>
+                <label>Exam Start: {{start}} </label>
+                <label>Exam End: {{end}}</label>
+            </div>
+            <!--SORULARIN OLUŞTURULACAĞI BİR CONTENT CLASSI DAHA EKLE!!!! -->
+            <blockquote>Please Select The Right Answers of Each Question. </blockquote>
+            <div class="content" id="question">
+                <!--SORU, ŞIKLAR VE CEVAPLARI VE DOĞRU CEVAP SEÇİMİ İÇİN GEREKLİ BÖLÜMLER OLMALI
+                SORULAR TEKER TEKER Mİ EKLENMELİ?-->
+                <p>Question</p>
+                <textarea id="texarea" name="textarea" placeholder="Enter your Question here."></textarea><br>
+                <input type="radio" id="a" name="radio">
+                <label for="a"></label>
+                <input type="text" name="atext" id="atext" placeholder="First choice of question"><br>
+                <input type="radio" id="b" name="radio">
+                <label for="b"></label>
+                <input type="text" name="btext" id="btext" placeholder="Second choice of question"><br>
+                <input type="radio" id="c" name="radio">
+                <label for="c"></label>
+                <input type="text" name="ctext" id="ctext" placeholder="Third choice of question"><br>
+                <input type="radio" id="d" name="radio">
+                <label for="d"></label>
+                <input type="text" name="dtext" id="dtext" placeholder="Fourth choice of question"><br>
+                <input type="radio" id="e" name="radio">
+                <label for="e"></label>
+                <input type="text" name="etext" id="etext" placeholder="Last choice of question"><br>
+                <button type="button" id="nextquestion" onclick="addQuestion()">Next Question</button>
+                </div>
+                <!-- SORU TEXTI, CEVAP TEXTLERİ VE RADIO ID'Sİ DÖNDÜRÜLMELİ => DÖNDÜRÜLEN SEÇENEK
+                AYNI ZAMANDA İŞARETLENEN, SORUNUN DOĞRU CEVABI!!
+                JUST FOR ONE (1) QUESTION...BRUH -->
+        <div id="nextq"></div>
+    </div>
+</section>
+
+<script>
+    function addQuestion(){
+        var question = document.getElementById('nextq')
+        question.innerHTML += document.getElementById('question').innerHTML;
+    }
+</script>
+
+
+</body>
+</html>
